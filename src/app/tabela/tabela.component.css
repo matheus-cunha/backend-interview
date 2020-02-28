@@ -37,10 +37,42 @@ table td{
 .table-wrapper::-webkit-scrollbar {
     width: 10px;
     height: 37rem;
-    /* background-color: #e7e7e7; */
 }
 
 .table-wrapper::-webkit-scrollbar-thumb {
-    /* background-color: #9b9b9b2f; */
     height: 37rem;
+}
+
+@media screen and (max-width: 1450px){      
+    table{
+        width: 100%;
+        height: 38rem;
+        box-shadow: none;
+    }
+    
+    table td{
+        padding-left: 0;
+    }
+    
+    table th{
+        padding-left: 0;
+    }
+
+    .table-wrapper{
+        height: 30rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    table button{
+        font-size: 0.7rem;
+    }
+
+    table td{
+        font-size: 0.7rem;
+    }
+   
+    .table-wrapper{
+        padding: 0.7rem;
+    } 
 }

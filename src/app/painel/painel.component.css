@@ -25,3 +25,49 @@ h1{
     width: 15rem;
     padding: 0.5rem 0;
 }
+
+@media screen and (max-width: 1450px){
+    .painel-container{
+        height: 30rem;
+    }
+    
+    .mat-form-field{
+        height: 4rem;
+    }
+
+    h1{
+        font-size: 1.3rem;
+    }
+
+    .painel-container button{
+        margin-top: 0rem;
+        width: 12rem;
+        padding: 0.2rem 0;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .painel-container{
+        height: 30rem;
+    }
+    
+    .mat-form-field{
+        height: 4rem;
+    }
+
+    h1{
+        font-size: 1.3rem;
+    }
+
+    .painel-container button{
+        margin-top: 0rem;
+        width: 12rem;
+        padding: 0.2rem 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .painel-container{
+        padding: 1rem 0.7rem;
+    }
+}

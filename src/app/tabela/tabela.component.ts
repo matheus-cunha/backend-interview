@@ -20,7 +20,7 @@ export class TabelaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSource = this.MainService.listProjects().pipe(
+    this.dataSource = this.MainService.list('').pipe(
       map((data: HttpResponse<PlaneInterface[]>) => data.body)
     );
   }
