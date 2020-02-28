@@ -1,27 +1,83 @@
-# BackendInterview
+# Backend - Interview.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+> Projeto desenvolvido com intúito de apresentar uma interface gestora de dados de uma empresa aérea.
 
-## Development server
+> Este projeto foi criado utilizando uma versão do Angular Cli (https://github.com/angular/angular-cli) versão 9.0.4 e mockApi(www.mockapi.io) para interpretar os endpoints.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![CSS Version](https://img.shields.io/badge/CSS-Vesion_3-BLUE.svg) 
+![Angular CLI](https://img.shields.io/badge/Angular-7.3.5-RED.svg) 
+![HTML](https://img.shields.io/badge/HTML-Vesion_5-ORANGE.svg)
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Premissa.
 
-## Build
+Projeto tem como premissa apresentar uma página que gerencie aeronáves. Algumas das funcionalidades até agora implementadas incluem comunicação com uma Api de regsitro de dados, onde os mesmos são tratados e apresentados de maneira legível no sistema.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+---
 
-## Running unit tests
+## Status do projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [x] Desenvolvimento de projeto.
+- [x] Projeto base.
+- [x] Responsividade.
+- [x] Integração.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Servidor de testes.
 
-## Further help
+Para execução do projeto será necessário a instalação dos pacotes do cliente Angular, siga o passo a passo a seguir:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> Instale via terminal os arquivos necessarios para compilação do projeto. Em seguida execute o comando para iniciar o servidor de testes:
+```shell
+$ npm install
+$ ng serve
+```
+
+Navegue até http://localhost:4200/ para ver a página compilada, se preciso atualize a mesma para poder visualizar as alterações.
+Utilizando o servidor de testes, todas as modificações do codigo serão interpretadas pelo navegador e atualizaram automaticamente.
+
+---
+
+## Ferramentas utilizadas.
+
+| Ferramenta    | Utilização                            |
+|---------------|---------------------------------------|
+| HTML              | Criação do código base da página. |
+| CSS3              | Edição de estilos da página.      |
+| Angular           | Integração com endpoints.         |
+| Angular Materials | Componentes do layout.            |
+| MockApi           | Simulação de Api endpoint.        |
+
+---
+
+## Contribua
+
+Este projeto possui codigo aberto para casos de opiniões, dicas ou feedback.
+
+### Passo 1
+
+- Faça um Fork ou Clone este repositório.
+
+### Passo 2
+
+- Desenvolva, altere e trabalhe da forma que preferir.
+
+### Passo 3
+
+- Crie um novo pull request e aguarde a análise.
+
+Por menor que seja o pull request, agradeço desde já sua contribuição. Todo o conhecimento é bem vindo!
+
+---
+
+## Contato
+
+Me siga nas redes sociais! 
+
+[Website](https://matheus-cunha.github.io/)
+
+[Pinterest](https://br.pinterest.com/portifoliomatheuscunha/)
+
+[Email](matheus.cunha.sjc@gmail.com)
