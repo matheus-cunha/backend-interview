@@ -5,7 +5,7 @@
 > Este projeto foi criado utilizando uma versão do Angular Cli (https://github.com/angular/angular-cli) versão 9.0.4 e mockApi(www.mockapi.io) para interpretar os endpoints.
 
 ![CSS Version](https://img.shields.io/badge/CSS-Vesion_3-BLUE.svg) 
-![Angular CLI](https://img.shields.io/badge/Angular-7.3.5-RED.svg) 
+![Angular CLI](https://img.shields.io/badge/Angular-9.0.4-RED.svg) 
 ![HTML](https://img.shields.io/badge/HTML-Vesion_5-ORANGE.svg)
 
 ---
