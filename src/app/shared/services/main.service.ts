@@ -22,4 +22,8 @@ export class MainService {
     return this.api.get<Array<PlaneInterface>>(urlFilter);
   }
 
+  register(body: PlaneInterface): Observable<HttpResponse<PlaneInterface>> {
+    return this.api.post<PlaneInterface>(this.url, JSON.stringify(body), this.headers);
+  }
+
 }

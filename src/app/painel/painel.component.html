@@ -1,39 +1,37 @@
 <div class="painel-container">
     <h1>Gestão de Aeronaves</h1>
-    <mat-form-field appearance="fill">
-        <mat-label>Marca</mat-label>
-        <mat-select>
-            <mat-option value="option">Embraer</mat-option>
-            <mat-option value="option">Boeing</mat-option>
-            <mat-option value="option">Airbus</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <form #form="ngForm" novalidate (ngSubmit)="save()">
+        <mat-form-field>
+            <mat-label>Marca</mat-label>
+            <mat-select [(ngModel)]="aeronave.marca" name="marca">
+                <mat-option value="Embraer">Embraer</mat-option>
+                <mat-option value="Boeing">Boeing</mat-option>
+                <mat-option value="Airbus">Airbus</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
 
-    <br>
+        <mat-form-field>
+            <mat-label>Aeronave</mat-label>
+            <input matInput [(ngModel)]="aeronave.modelo" name="modelo">
+        </mat-form-field>
+        <br>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Aeronave</mat-label>
-        <input matInput>
-    </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ano</mat-label>
+            <input matInput [(ngModel)]="aeronave.ano" name="ano">
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field>
+            <mat-label>Disponibilidade</mat-label>
+            <mat-select [(ngModel)]="aeronave.disponibilidade" name="disponibilidade"> 
+                <mat-option value="Vendido">Vendido</mat-option>
+                <mat-option value="Disponível">Disponível</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
 
-    <br>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Ano</mat-label>
-        <input matInput>
-    </mat-form-field>
-
-    <br>
-    
-    <mat-form-field appearance="fill">
-        <mat-label>Disponibilidade</mat-label>
-        <mat-select>
-            <mat-option value="option">Vendido</mat-option>
-            <mat-option value="option">Disponível</mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <br>
-
-    <button mat-raised-button>Registrar</button>
+        <button mat-raised-button (click)="form.onSubmit()">Registrar</button>
+    </form>
 </div>
