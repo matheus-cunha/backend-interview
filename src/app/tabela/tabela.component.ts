@@ -17,12 +17,17 @@ export class TabelaComponent implements OnInit {
   dataSource: Observable <PlaneInterface[]>;
 
   constructor(private MainService: MainService) {
+
   }
 
   ngOnInit() {
     this.dataSource = this.MainService.list('').pipe(
       map((data: HttpResponse<PlaneInterface[]>) => data.body)
     );
+  }
+
+  deletar(id: number) {
+    this.MainService.delete(id).subscribe(() => alert('Excluído com sucesso!'));
   }
 
 }

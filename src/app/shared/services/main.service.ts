@@ -26,4 +26,7 @@ export class MainService {
     return this.api.post<PlaneInterface>(this.url, JSON.stringify(body), this.headers);
   }
 
+  delete(id: number): Observable<HttpResponse<PlaneInterface>> {
+    return this.api.delete<PlaneInterface>(this.url + id);
+  }
 }

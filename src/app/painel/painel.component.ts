@@ -18,8 +18,6 @@ export class PainelComponent {
   }
 
   save() {
-    console.log('aeronave', this.aeronave);
-
     this.MainService.register(this.aeronave).subscribe(() => alert('Salvo com sucesso!'));
   }
 }

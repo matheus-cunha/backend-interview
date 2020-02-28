@@ -28,6 +28,13 @@ export class HttpClientService {
     }).pipe(catchError(error => this.returnError(error)));
   }
 
+  delete<T>(url: string, params?: HttpParams): Observable<HttpResponse<T>> {
+    return this.http.delete<T>(url, {
+      observe: 'response',
+      params
+    }).pipe(catchError(error => this.returnError(error)));
+  }
+  
   private returnError(error: HttpErrorResponse): Observable<any> {
     const err = { status: error.status, code: '500', message: ''};
 

@@ -39,7 +39,7 @@
         <ng-container matColumnDef="excluir">
             <th mat-header-cell *matHeaderCellDef> Excluir Registro </th>
             <td mat-cell *matCellDef="let element"> 
-                <button mat-raised-button>Excluir registro</button>
+                <button mat-raised-button (click)="deletar(element.id)">Excluir registro</button>
             </td>
         </ng-container>
     
