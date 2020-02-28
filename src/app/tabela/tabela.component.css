@@ -1,0 +1,46 @@
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.title mat-form-field{
+    width: 80%;
+    margin-right: 1rem;
+}
+ 
+.title button{
+    width: 12rem;
+    height: 3.8rem;
+}
+
+table{
+    width: 100%;
+    height: 38rem;
+    box-shadow: none;
+}
+
+table td{
+    padding-right: 0;
+}
+
+.table-wrapper{
+    width: 100%;
+    height: 40rem;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 2px 2px 10px #00000088;
+    border-radius: 30px;
+    padding: 1rem;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    width: 10px;
+    height: 37rem;
+    /* background-color: #e7e7e7; */
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    /* background-color: #9b9b9b2f; */
+    height: 37rem;
+}

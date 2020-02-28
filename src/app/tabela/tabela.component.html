@@ -1,0 +1,50 @@
+<div class="table-wrapper">
+    <div class="title">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Pesquisa por Modelo ou ID</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <button mat-raised-button>Buscar</button>
+
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+        <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="marca">
+        <th mat-header-cell *matHeaderCellDef> Marca </th>
+        <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef> Modelo </th>
+        <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef> Ano </th>
+        <td mat-cell *matCellDef="let element"> {{element.ano}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="disponibilidade">
+        <th mat-header-cell *matHeaderCellDef> Disponibilidade </th>
+        <td mat-cell *matCellDef="let element"> {{element.disponibilidade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="excluir">
+            <th mat-header-cell *matHeaderCellDef> Excluir </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button mat-raised-button>Excluir registro</button>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>
