@@ -14,12 +14,16 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from './shared/modal/modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PainelComponent,
-    TabelaComponent
+    TabelaComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -31,13 +35,18 @@ import { ToastrModule } from 'ngx-toastr';
     MatTableModule,
     HttpClientModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpClientModule
   ],
   bootstrap: [
     AppComponent
+  ],
+  entryComponents: [
+    ModalComponent
   ]
 })
 export class AppModule { }

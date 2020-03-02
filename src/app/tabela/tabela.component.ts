@@ -4,9 +4,10 @@ import { MainService } from '../shared/services/main.service';
 import { PlaneInterface } from '../shared/models/plane-interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { ToastrService } from 'ngx-toastr';
-import { templateJitUrl } from '@angular/compiler';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA , MatDialogConfig } from '@angular/material/dialog';
+import { ModalComponent } from '../shared/modal/modal.component';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-tabela',
@@ -20,24 +21,41 @@ export class TabelaComponent implements OnInit {
 
   displayedColumns: string[] = ['id' , 'marca' , 'modelo' , 'ano' , 'disponibilidade' , 'editar' , 'excluir' ];
   dataSource: Observable <PlaneInterface[]>;
+    
+  constructor(
+    private MainService: MainService, 
+    private toastr: ToastrService,
+    public dialog: MatDialog
+  ){}
 
-  constructor(private MainService: MainService , private toastr: ToastrService) {}
-
-  registroApagado() {this.toastr.success('', 'Deletado com sucesso!');}
+  messageDelete() {this.toastr.success('', 'Deletado com sucesso!');}
 
   ngOnInit() {
+    this.get();
+  }
+
+  get() {
     this.dataSource = this.MainService.list('').pipe(
       map((data: HttpResponse<PlaneInterface[]>) => data.body)
     );
   }
 
-  deletar(id: number) {
+  delete(id: number) {
     this.MainService.delete(id).subscribe();
-    this.registroApagado();
-    // location.reload();
+    this.messageDelete();
+    this.get();
   }
 
-  editar(id: number) {
-    this.MainService.delete(id).subscribe(() => alert('Excluído com sucesso!'));
+  openDialog(element): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+        elementEdit: element
+    };
+
+    this.dialog.open(ModalComponent, dialogConfig);
   }
 }
