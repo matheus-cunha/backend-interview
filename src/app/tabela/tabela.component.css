@@ -1,3 +1,7 @@
+@import '~ngx-toastr/toastr';
+/* @import '~ngx-toastr/toastr-bs4-alert'; */
+/* @node_modules/ngx-toastr/toastr.css; */
+
 .title{
     display: flex;
     flex-direction: row;

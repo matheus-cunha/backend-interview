@@ -8,11 +8,12 @@ import { PainelComponent } from './painel/painel.component';
 import { TabelaComponent } from './tabela/tabela.component';
 
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule} from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
+import { MatSelectModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,14 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [HttpClientModule],
-  bootstrap: [AppComponent]
+  providers: [
+    HttpClientModule
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
