@@ -5,9 +5,8 @@ import { PlaneInterface } from '../shared/models/plane-interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA , MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../shared/modal/modal.component';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-tabela',
@@ -57,5 +56,6 @@ export class TabelaComponent implements OnInit {
     };
 
     this.dialog.open(ModalComponent, dialogConfig);
+    this.get();
   }
 }

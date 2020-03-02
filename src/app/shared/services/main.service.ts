@@ -29,4 +29,9 @@ export class MainService {
   delete(id: number): Observable<HttpResponse<PlaneInterface>> {
     return this.api.delete<PlaneInterface>(this.url + id);
   }
+
+  edit(id: number, body: PlaneInterface): Observable<HttpResponse<PlaneInterface>> {
+    const novaUrl = this.url + id;
+    return this.api.put<PlaneInterface>(novaUrl, JSON.stringify(body), this.headers);
+  }
 }

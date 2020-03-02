@@ -35,6 +35,13 @@ export class HttpClientService {
     }).pipe(catchError(error => this.returnError(error)));
   }
   
+  put<T>(url: string, body?: any, headers?: HttpHeaders): Observable<HttpResponse<T>> {
+    return this.http.put<T>(url, body, {
+      headers,
+      observe: 'response'
+    }).pipe(catchError(error => this.returnError(error)));
+  }
+
   private returnError(error: HttpErrorResponse): Observable<any> {
     const err = { status: error.status, code: '500', message: ''};
 

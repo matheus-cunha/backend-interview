@@ -1,8 +1,9 @@
 import {Component, OnInit, Inject} from '@angular/core';
-import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { MainService } from '../services/main.service';
 import { PlaneInterface } from '../models/plane-interface';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA , MatDialogConfig} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-modal',
@@ -18,35 +19,27 @@ export class ModalComponent implements OnInit {
   constructor(
       private fb: FormBuilder,
       private dialogRef: MatDialogRef<ModalComponent>,
-      @Inject(MAT_DIALOG_DATA) data) {
-
+      private MainService: MainService,
+      private toastr: ToastrService,
+      @Inject(MAT_DIALOG_DATA) data
+    )
+    {
       this.elementEdit = data.elementEdit;
-  }
+    }
+
+  messageEdit() {this.toastr.success('', 'Editado com sucesso!');}
 
   ngOnInit() {
-    
+
   }
 
   save() {
-      this.dialogRef.close();
+    this.MainService.edit(this.elementEdit.id , this.elementEdit).subscribe();
+    this.messageEdit();
+    this.dialogRef.close();
   }
 
   close() {
       this.dialogRef.close();
   }
-
-  // title = 'proj-endpoint';
-  // aeronave: PlaneInterface = {} as PlaneInterface;
-
-  // constructor(
-  //   private MainService: MainService,
-  //   private fb: FormBuilder,
-  //   private dialogRef: MatDialogRef<CourseDialogComponent>,
-  //   @Inject(MAT_DIALOG_DATA) data){this.description = data.description;}
-  // ) {}
-
-  // save() {
-  //   this.MainService.register(this.aeronave).subscribe(() => alert('Salvo com sucesso!'));
-  // }
-
 }
