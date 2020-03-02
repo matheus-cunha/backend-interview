@@ -1,18 +1,20 @@
 # Backend - Interview.
 
-> Projeto desenvolvido com intúito de apresentar uma interface gestora de dados de uma empresa aérea.
+> Projeto desenvolvido com intuito de apresentar uma interface gestora de dados de uma empresa aérea.
 
 > Este projeto foi criado utilizando uma versão do Angular Cli (https://github.com/angular/angular-cli) versão 9.0.4 e mockApi(www.mockapi.io) para interpretar os endpoints.
 
 ![CSS Version](https://img.shields.io/badge/CSS-Vesion_3-BLUE.svg) 
-![Angular CLI](https://img.shields.io/badge/Angular-7.3.5-RED.svg) 
+![Angular CLI](https://img.shields.io/badge/Angular-9.0.4-RED.svg) 
 ![HTML](https://img.shields.io/badge/HTML-Vesion_5-ORANGE.svg)
 
 ---
 
 ## Premissa.
 
-Projeto tem como premissa apresentar uma página que gerencie aeronáves. Algumas das funcionalidades até agora implementadas incluem comunicação com uma Api de regsitro de dados, onde os mesmos são tratados e apresentados de maneira legível no sistema.
+Projeto tem como premissa apresentar uma página que gerencie aeronaves. Algumas das funcionalidades até agora implementadas incluem comunicação com uma Api de registro de dados, onde os mesmos são tratados e apresentados de maneira legível no sistema.
+
+O design adotado foi um layout simples, que apresenta uma tela para cadastro de novas aeronaves no lado esquerdo e uma tabela com todos os modelos registrados no sistema no lado direito.
 
 ---
 
@@ -22,6 +24,7 @@ Projeto tem como premissa apresentar uma página que gerencie aeronáves. Alguma
 - [x] Projeto base.
 - [x] Responsividade.
 - [x] Integração.
+- [ ] Novas funcionalidades.
 
 ---
 
@@ -42,13 +45,13 @@ Utilizando o servidor de testes, todas as modificações do codigo serão interp
 
 ## Ferramentas utilizadas.
 
-| Ferramenta    | Utilização                            |
-|---------------|---------------------------------------|
+| Ferramenta        | Utilização                        |
+|-------------------|-----------------------------------|
 | HTML              | Criação do código base da página. |
 | CSS3              | Edição de estilos da página.      |
 | Angular           | Integração com endpoints.         |
 | Angular Materials | Componentes do layout.            |
-| MockApi           | Simulação de Api endpoint.        |
+| MockApi           | Simulação de Api - endpoints.     |
 
 ---
 
