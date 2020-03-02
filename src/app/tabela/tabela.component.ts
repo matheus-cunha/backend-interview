@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
 
 export class TabelaComponent implements OnInit {
 
-  displayedColumns: string[] = ['id' , 'marca' , 'modelo' , 'ano' , 'disponibilidade' , 'excluir' ];
+  displayedColumns: string[] = ['id' , 'marca' , 'modelo' , 'ano' , 'disponibilidade' , 'editar' , 'excluir' ];
   dataSource: Observable <PlaneInterface[]>;
 
   constructor(private MainService: MainService) {
@@ -30,4 +30,7 @@ export class TabelaComponent implements OnInit {
     this.MainService.delete(id).subscribe(() => alert('Excluído com sucesso!'));
   }
 
+  // editar(id: number) {
+  //   this.MainService.delete(id).subscribe(() => alert('Excluído com sucesso!'));
+  // }
 }
