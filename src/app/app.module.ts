@@ -40,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    HttpClientModule
+    HttpClientModule,
+    TabelaComponent
   ],
   bootstrap: [
     AppComponent

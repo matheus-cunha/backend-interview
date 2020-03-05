@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MainService } from '../shared/services/main.service';
 import { PlaneInterface } from '../shared/models/plane-interface';
 import { ToastrService } from 'ngx-toastr';
+import { DataShareService } from '../shared/services/data-share.service'
 
 @Component({
   selector: 'app-painel',
@@ -13,17 +14,22 @@ import { ToastrService } from 'ngx-toastr';
 export class PainelComponent {
   title = 'proj-endpoint';
   aeronave: PlaneInterface = {} as PlaneInterface;
+  trigger:string;
 
   constructor(
     private MainService: MainService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private data: DataShareService
   ){}
 
-  messageSave() {this.toastr.success('', 'Salvo com sucesso!');}
+  messageSave() {
+    this.toastr.success('Salvo com sucesso!');
+  }
 
   save() {
-    this.messageSave();
-    this.MainService.register(this.aeronave).subscribe();   
-    // location.reload()
+    this.MainService.register(this.aeronave).subscribe(() => {
+      this.messageSave();
+      this.data.currentMessage.subscribe(trigger => this.trigger = 'Registro inserido')
+    });  
   }
 }

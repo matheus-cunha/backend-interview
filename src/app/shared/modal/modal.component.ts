@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./modal.component.css']
 })
 
-export class ModalComponent implements OnInit {
+export class ModalComponent {
 
   form: FormGroup;
   elementEdit: PlaneInterface;
@@ -26,20 +26,15 @@ export class ModalComponent implements OnInit {
     {
       this.elementEdit = data.elementEdit;
     }
-
-  messageEdit() {this.toastr.success('', 'Editado com sucesso!');}
-
-  ngOnInit() {
-
-  }
-
+  
   save() {
-    this.MainService.edit(this.elementEdit.id , this.elementEdit).subscribe();
-    this.messageEdit();
-    this.dialogRef.close();
+    this.MainService.edit(this.elementEdit.id , this.elementEdit).subscribe(() => {
+      // this.toastr.success('Editado com sucesso!');
+    });
+    this.close();
   }
 
-  close() {
-      this.dialogRef.close();
+  close() {      
+    this.dialogRef.close();
   }
 }
