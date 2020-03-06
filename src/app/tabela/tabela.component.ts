@@ -21,23 +21,28 @@ export class TabelaComponent implements OnInit {
 
   displayedColumns: string[] = ['id' , 'marca' , 'modelo' , 'ano' , 'disponibilidade' , 'editar' , 'excluir' ];
   dataSource: Observable <PlaneInterface[]>;
-  trigger:string;  
+  search: ''; 
 
   constructor(
     private MainService: MainService, 
     private toastr: ToastrService,
     public dialog: MatDialog,
-    private data: DataShareService
+    private dataShareService: DataShareService
   ){}
 
   ngOnInit() {
-    this.get();
-    this.newRegister();
+    this.dataShareService.getRefresh().subscribe((value: boolean) => {
+      if (value) {
+        this.get();
+      }
+    });
   }
-
-  newRegister() {
-    this.data.currentMessage.subscribe(trigger => this.trigger = trigger);
-    console.log(this.trigger);
+  
+  buscar() { 
+    this.dataSource = this.MainService.list(this.search).pipe(
+      map((data: HttpResponse<PlaneInterface[]>) => data.body
+      ));
+    this.search = ''; 
   }
 
   get() {
@@ -48,7 +53,7 @@ export class TabelaComponent implements OnInit {
 
   delete(id: number) {
     this.MainService.delete(id).subscribe(() => {
-      this.toastr.success('', 'Deletado com sucesso!');
+      this.toastr.success('', 'Registro apagado!');
       this.get();
     });
   }
@@ -66,7 +71,7 @@ export class TabelaComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(() => {
-      this.toastr.success('Editado com sucesso!');
+      this.toastr.success('Edição concluída!');
       (async () => { 
         await this.delay(100);
         this.get();
@@ -77,5 +82,20 @@ export class TabelaComponent implements OnInit {
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
+
+  // openDialog(element: any): void {
+  //   const dialogConfig = new MatDialogConfig();
+
+  //   dialogConfig.disableClose = true;
+  //   dialogConfig.autoFocus = true;
+    
+  //   dialogConfig.data = {
+  //       elementEdit: cloneDeep(element)
+  //   };
+
+  //   this.dialog.open(ModalComponent, dialogConfig).afterClosed().subscribe(() => {
+  //     this.get();
+  //   });
+  // }
 
 }

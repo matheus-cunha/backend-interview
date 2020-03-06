@@ -22,17 +22,6 @@ export class MainService {
     return this.api.get<Array<PlaneInterface>>(urlFilter);
   } 
 
-  // list(search?: string): Observable<HttpResponse<Array<PlaneInterface>>> {
-  //   const urlFilter = this.url + search ? '?search=' + search : '';
-  //   return this.api.get<Array<PlaneInterface>>(urlFilter);
-  // }
-
-  // list(search: string): Observable<HttpResponse<Array<Aeronave>>> {
-  //   // Se a string tiver valor, a url vai ser montada com o parâmetro search, senão vai pegar tudo do endpoint para listar
-  //   const urlFilter = this.url + search ? '?search=' + search : '';
-  //   return this.api.get<Array<Aeronave>>(urlFilter);
-  // }
-
   register(body: PlaneInterface): Observable<HttpResponse<PlaneInterface>> {
     return this.api.post<PlaneInterface>(this.url, JSON.stringify(body), this.headers);
   }

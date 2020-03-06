@@ -12,9 +12,9 @@
 
 ## Premissa.
 
-Projeto tem como premissa apresentar uma página que gerencie aeronaves. Algumas das funcionalidades até agora implementadas incluem comunicação com uma Api de registro de dados, onde os mesmos são tratados e apresentados de maneira legível no sistema.
+Projeto tem como premissa apresentar uma página que gerencie os registros de aeronaves no sistema de uma empresa. O sistema dispõe de funções de registro, edição e pesquisa de itens. 
 
-O design adotado foi um layout simples, que apresenta uma tela para cadastro de novas aeronaves no lado esquerdo e uma tabela com todos os modelos registrados no sistema no lado direito.
+O design adotado foi um layout simples, que apresenta uma tela para cadastro ao lado esquerdo e uma tabela com todos os modelos no sistema no lado direito. Foi utilizado um gerador de Api para simular o back-end e retornar os endpoints para tratamento do arquivo Json que continha todos os dados a serem apresentados na tela. 
 
 ---
 
@@ -24,7 +24,7 @@ O design adotado foi um layout simples, que apresenta uma tela para cadastro de 
 - [x] Projeto base.
 - [x] Responsividade.
 - [x] Integração.
-- [ ] Novas funcionalidades.
+- [ ] Funções de busca por data.
 
 ---
 

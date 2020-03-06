@@ -3,10 +3,10 @@
 
         <mat-form-field>
             <mat-label>Pesquisa por Modelo ou ID</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="search">
         </mat-form-field>
 
-        <button mat-raised-button>Buscar</button>
+        <button mat-raised-button (click)="buscar()">Buscar</button>
 
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

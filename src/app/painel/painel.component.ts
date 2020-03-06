@@ -14,12 +14,11 @@ import { DataShareService } from '../shared/services/data-share.service'
 export class PainelComponent {
   title = 'proj-endpoint';
   aeronave: PlaneInterface = {} as PlaneInterface;
-  trigger:string;
 
   constructor(
     private MainService: MainService,
     private toastr: ToastrService,
-    private data: DataShareService
+    private dataShareService: DataShareService
   ){}
 
   messageSave() {
@@ -29,7 +28,8 @@ export class PainelComponent {
   save() {
     this.MainService.register(this.aeronave).subscribe(() => {
       this.messageSave();
-      this.data.currentMessage.subscribe(trigger => this.trigger = 'Registro inserido')
+      this.dataShareService.setRefresh(true);
+      window.location.reload();
     });  
   }
 }

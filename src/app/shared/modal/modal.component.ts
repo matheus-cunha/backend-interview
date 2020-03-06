@@ -26,10 +26,9 @@ export class ModalComponent {
     {
       this.elementEdit = data.elementEdit;
     }
-  
+
   save() {
     this.MainService.edit(this.elementEdit.id , this.elementEdit).subscribe(() => {
-      // this.toastr.success('Editado com sucesso!');
     });
     this.close();
   }

@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataShareService {
 
-  private messageSource = new BehaviorSubject('Aguardando');
-  currentMessage = this.messageSource.asObservable();
+  private data = new BehaviorSubject<boolean>(true);
 
   constructor() { }
 
-  changeMessage(message: string) {
-    this.messageSource.next(message)
+  setRefresh(data: boolean) {
+    this.data.next(data);
+  }
+
+  getRefresh(): Observable<boolean> {
+    return this.data.asObservable();
   }
 }
